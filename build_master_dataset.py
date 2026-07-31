@@ -34,12 +34,21 @@ def build_master_dataset():
     ]
     
     df_master = df_prospects[cols].drop_duplicates(subset=["target_domain", "company_name", "business_email"])
+    
+    # User Filter: Remove records where company_name is Atom Inc. (formerly Squadhelp), Replit Inc., or NEOM Company
+    exclude_companies = [
+        "Atom Inc. (formerly Squadhelp)",
+        "Replit Inc.",
+        "NEOM Company"
+    ]
+    
+    df_master = df_master[~df_master["company_name"].isin(exclude_companies)]
     df_master = df_master.sort_values(by=["target_domain", "confidence_score"], ascending=[True, False])
     
     # Save CSV
     csv_path = BASE_DIR / "master_prospects.csv"
     df_master.to_csv(csv_path, index=False, encoding="utf-8-sig")
-    print(f"Saved master_prospects.csv ({len(df_master)} rows)")
+    print(f"Saved master_prospects.csv ({len(df_master)} rows after filtering out excluded companies)")
     
     # Save XLSX with formatting
     xlsx_path = BASE_DIR / "master_prospects.xlsx"
@@ -89,7 +98,7 @@ def build_master_dataset():
         ws.column_dimensions[col_letter].width = min(max(max_len + 3, 12), 45)
         
     wb.save(xlsx_path)
-    print(f"Saved master_prospects.xlsx formatted successfully.")
+    print(f"Saved master_prospects.xlsx formatted successfully with {len(df_master)} rows.")
 
 if __name__ == "__main__":
     build_master_dataset()

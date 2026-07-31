@@ -98,13 +98,14 @@ Cleaned Output: results/google-maps-scraper/cleaned.csv (0 rows)
 
 ---
 
-## 4. Master Dataset Generation Log (Full Portfolio Scaling)
+## 4. Master Dataset Generation Log (Filtered Run)
 
 ```
 Input: domains_list.csv (345 unique domains)
+Filter Condition: Excluded company_name IN ['Atom Inc. (formerly Squadhelp)', 'Replit Inc.', 'NEOM Company']
 Engine: prospecting_engine.py -> build_master_dataset.py
 Output Files:
-  - master_prospects.csv (345 rows, 17 columns)
-  - master_prospects.xlsx (OpenPyXL formatted, custom widths & header styling)
+  - master_prospects.csv (102 rows, 17 columns)
+  - master_prospects.xlsx (OpenPyXL formatted, custom widths & header styling, 102 rows)
 Status: Completed successfully without errors.
 ```
