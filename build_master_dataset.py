@@ -5,16 +5,14 @@ import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
-from prospecting_engine import generate_prospects
+from prospecting_engine import generate_prospects_for_all_domains
 
 BASE_DIR = Path(__file__).parent.resolve()
-RESULTS_DIR = BASE_DIR / "results"
 
 def build_master_dataset():
-    prospects = generate_prospects()
+    prospects = generate_prospects_for_all_domains()
     df_prospects = pd.DataFrame(prospects)
     
-    # Standardize column order
     cols = [
         "target_domain",
         "company_name",

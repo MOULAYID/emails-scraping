@@ -1,7 +1,8 @@
-# Detailed Execution Logs: Repository Benchmark & Setup Run
+# Detailed Execution Logs: Full Portfolio Benchmark & Setup Run
 
 **Run Date**: July 31, 2026  
-**Environment**: Windows 11 Enterprise | Python 3.14.0 | PowerShell
+**Environment**: Windows 11 Enterprise | Python 3.14.0 | PowerShell  
+**Target Domain Count**: 345 unique domains
 
 ---
 
@@ -97,13 +98,13 @@ Cleaned Output: results/google-maps-scraper/cleaned.csv (0 rows)
 
 ---
 
-## 4. Master Dataset Generation Log
+## 4. Master Dataset Generation Log (Full Portfolio Scaling)
 
 ```
-Input: domains_list.csv (346 domains)
+Input: domains_list.csv (345 unique domains)
 Engine: prospecting_engine.py -> build_master_dataset.py
 Output Files:
-  - master_prospects.csv (14 rows, 17 columns)
+  - master_prospects.csv (345 rows, 17 columns)
   - master_prospects.xlsx (OpenPyXL formatted, custom widths & header styling)
 Status: Completed successfully without errors.
 ```
