@@ -35,20 +35,23 @@ def build_master_dataset():
     
     df_master = df_prospects[cols].drop_duplicates(subset=["target_domain", "company_name", "business_email"])
     
-    # User Filter: Remove records where company_name is Atom Inc. (formerly Squadhelp), Replit Inc., or NEOM Company
+    # User Filter 1: Remove records where company_name is Atom Inc. (formerly Squadhelp), Replit Inc., or NEOM Company
     exclude_companies = [
         "Atom Inc. (formerly Squadhelp)",
         "Replit Inc.",
         "NEOM Company"
     ]
-    
     df_master = df_master[~df_master["company_name"].isin(exclude_companies)]
+    
+    # User Filter 2: Remove records where target_domain ends with .link or .info
+    df_master = df_master[~df_master["target_domain"].str.lower().str.endswith((".link", ".info"))]
+    
     df_master = df_master.sort_values(by=["target_domain", "confidence_score"], ascending=[True, False])
     
     # Save CSV
     csv_path = BASE_DIR / "master_prospects.csv"
     df_master.to_csv(csv_path, index=False, encoding="utf-8-sig")
-    print(f"Saved master_prospects.csv ({len(df_master)} rows after filtering out excluded companies)")
+    print(f"Saved master_prospects.csv ({len(df_master)} rows after filtering)")
     
     # Save XLSX with formatting
     xlsx_path = BASE_DIR / "master_prospects.xlsx"

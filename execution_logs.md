@@ -98,14 +98,15 @@ Cleaned Output: results/google-maps-scraper/cleaned.csv (0 rows)
 
 ---
 
-## 4. Master Dataset Generation Log (Filtered Run)
+## 4. Master Dataset Generation Log (Filtered TLD & Holding Company Run)
 
 ```
 Input: domains_list.csv (345 unique domains)
-Filter Condition: Excluded company_name IN ['Atom Inc. (formerly Squadhelp)', 'Replit Inc.', 'NEOM Company']
+Filter Condition 1: Excluded company_name IN ['Atom Inc. (formerly Squadhelp)', 'Replit Inc.', 'NEOM Company']
+Filter Condition 2: Excluded target_domain ENDSWITH ('.link', '.info')
 Engine: prospecting_engine.py -> build_master_dataset.py
 Output Files:
-  - master_prospects.csv (102 rows, 17 columns)
-  - master_prospects.xlsx (OpenPyXL formatted, custom widths & header styling, 102 rows)
+  - master_prospects.csv (62 rows, 17 columns)
+  - master_prospects.xlsx (OpenPyXL formatted, custom widths & header styling, 62 rows)
 Status: Completed successfully without errors.
 ```
