@@ -1,0 +1,13 @@
+=== Testing Repository: Google-EmailScraper ===
+Execution stdout:
+
+Execution stderr:
+Traceback (most recent call last):
+  File "C:\Users\midaouadi\Documents\data analytics projects\emails-scraping\tools\Google-EmailScraper\main.py", line 17, in <module>
+    from xgoogle.search import GoogleSearch
+  File "C:\Users\midaouadi\Documents\data analytics projects\emails-scraping\tools\Google-EmailScraper\xgoogle\search.py", line 124
+    raise SearchError, "Wrong parameter to first_indexed_in_previous: %s" % (str(interval))
+                     ^
+SyntaxError: invalid syntax
+
+Exit code: 1

@@ -1,0 +1,5 @@
+=== Testing Repository: lazyGrandma ===
+Target Environment: Windows (PowerShell/CMD)
+Script Type: Bash (.sh) script requiring Linux / xdg-utils / iceweasel.
+Execution status: Incompatible OS environment. Bash script cannot run natively without WSL / Linux shell.
+Tool Purpose: Interactive OSINT URL launcher in browser tabs, does not generate CSV/data outputs programmatically.

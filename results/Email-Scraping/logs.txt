@@ -1,0 +1,30 @@
+=== Testing Repository: Email-Scraping ===
+Directory: C:\Users\midaouadi\Documents\data analytics projects\emails-scraping\tools\Email-Scraping
+Created urls.txt with 5 test URLs.
+Execution stdout:
+1.https://www.google.com
+	Fetched in : 0.17109179496765137
+	Number of Emails : 0
+
+2.https://www.bing.com
+	Fetched in : 0.13847994804382324
+	Number of Emails : 0
+
+3.https://news.ycombinator.com
+	Fetched in : 0.8369653224945068
+	Number of Emails : 1
+
+4.https://github.com
+	Fetched in : 0.21973848342895508
+	Number of Emails : 2
+
+5.https://www.wikipedia.org
+	Fetched in : 0.14323806762695312
+	Number of Emails : 2
+
+Elapsed Time: 1.576172113418579
+
+Execution stderr:
+
+Exit code: 0
+Raw emails extracted count: 4

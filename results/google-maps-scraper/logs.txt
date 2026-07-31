@@ -1,0 +1,5 @@
+=== Testing Repository: google-maps-scraper ===
+Directory: C:\Users\midaouadi\Documents\data analytics projects\emails-scraping\tools\google-maps-scraper
+Tech Stack: Go (Golang) compiler, Docker, Playwright/Rod headless browser
+Go runtime missing on host: [WinError 2] Le fichier spécifié est introuvable
+Status: Unable to build/run native Go binary without installed Go compiler or Docker daemon.
